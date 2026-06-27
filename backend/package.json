@@ -1,0 +1,27 @@
+{
+  "name": "@linkpilot/backend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js",
+    "lint": "node --check server.js && node --check config/db.js && node --check config/env.js && node --check controllers/linkController.js && node --check middleware/errorHandler.js && node --check middleware/mongoSanitize.js && node --check middleware/rateLimiter.js && node --check models/Link.js && node --check routes/linkRoutes.js && node --check utils/httpError.js && node --check utils/validateUrl.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "mongodb": "^7.2.0",
+    "mongoose": "^9.0.1",
+    "morgan": "^1.10.1",
+    "nanoid": "^5.1.6"
+  },
+  "devDependencies": {
+    "mongodb-memory-server": "^10.4.3",
+    "nodemon": "^3.1.11"
+  }
+}
